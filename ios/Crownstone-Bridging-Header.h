@@ -16,6 +16,3 @@
 #import <React/RCTRootView.h>
 #import <ReactNativeNavigation/ReactNativeNavigation.h>
 
-#import <Bugsnag/Bugsnag.h>
-
-

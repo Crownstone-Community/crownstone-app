@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CrownstoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrownstoneTests.m */; };
 		926BBDA72A5C2B6700D8E0E0 /* BluenetLib in Frameworks */ = {isa = PBXBuildFile; productRef = 926BBDA62A5C2B6700D8E0E0 /* BluenetLib */; };
+		926BBDE92A5C375000D8E0E0 /* BluenetLib in Frameworks */ = {isa = PBXBuildFile; productRef = 926BBDE82A5C375000D8E0E0 /* BluenetLib */; };
 		976A993272B2E3694D333A07 /* libPods-Crownstone-CrownstoneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081F04EB7F8B7237DA080F6 /* libPods-Crownstone-CrownstoneTests.a */; };
 		F565541EA0E74560636016AB /* libPods-Crownstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD56EF91E4960067C3F6026 /* libPods-Crownstone.a */; };
 		FA0177CF1FC462F5001C8FD6 /* ErrorTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0177CE1FC462F5001C8FD6 /* ErrorTranslator.swift */; };
@@ -407,13 +408,6 @@
 			remoteGlobalIDString = 484E6781D8E6CE2FB8F6C8D7C9578D97;
 			remoteInfo = RNShare;
 		};
-		FAC9792226B2B31A008BB51D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA274E4A2410144E00D7C858 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3EEAA606F6866DA20E6601B9655B1027;
-			remoteInfo = BugsnagReactNative;
-		};
 		FACBF71D287D68A0000CC582 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA274E4A2410144E00D7C858 /* Pods.xcodeproj */;
@@ -655,6 +649,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926BBDE92A5C375000D8E0E0 /* BluenetLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,7 +823,6 @@
 		FA274E4B2410144E00D7C858 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAC9792326B2B31A008BB51D /* BugsnagReactNative */,
 				FA274E7C2410144F00D7C858 /* DoubleConversion */,
 				FA274E7E2410144F00D7C858 /* FBReactNativeSpec */,
 				FA39A4952743C7AE00A63C79 /* fmt */,
@@ -1096,6 +1090,7 @@
 			);
 			name = "WatchTower Extension";
 			packageProductDependencies = (
+				926BBDE82A5C375000D8E0E0 /* BluenetLib */,
 			);
 			productName = "WatchTower Extension";
 			productReference = FA86C68A21CCEECF00811933 /* WatchTower Extension.appex */;
@@ -1535,14 +1530,6 @@
 			remoteRef = FAC6D17A24BCAA8A007AA96F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FAC9792326B2B31A008BB51D /* BugsnagReactNative */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			name = BugsnagReactNative;
-			path = libBugsnagReactNative.a;
-			remoteRef = FAC9792226B2B31A008BB51D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		FACBF71E287D68A0000CC582 /* RNGestureHandler */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1685,7 +1672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export EXTRA_PACKAGER_ARGS=\"--sourcemap-output $TMPDIR/$(md5 -qs \"$CONFIGURATION_BUILD_DIR\")-main.jsbundle.map\"\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export EXTRA_PACKAGER_ARGS=\"--sourcemap-output $TMPDIR/$(md5 -qs \"$CONFIGURATION_BUILD_DIR\")-main.jsbundle.map\"\nexport NODE_BINARY=node\nexport NODE_OPTIONS=--openssl-legacy-provider\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		43A22224072897CAC78F7140 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2601,6 +2588,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		926BBDA62A5C2B6700D8E0E0 /* BluenetLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 926BBDA52A5C2B6700D8E0E0 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */;
+			productName = BluenetLib;
+		};
+		926BBDE82A5C375000D8E0E0 /* BluenetLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 926BBDA52A5C2B6700D8E0E0 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */;
 			productName = BluenetLib;

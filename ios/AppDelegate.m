@@ -18,7 +18,6 @@
   // Define UNUserNotificationCenter
    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
    center.delegate = self;
-  [Bugsnag start];
   return YES;
 }
 
