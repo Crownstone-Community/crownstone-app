@@ -308,6 +308,24 @@ export class DEV_AdvancedConfig extends LiveComponent<{
           }, failed);
         }
       });
+      items.push({
+        label: "Current Consumption Threshold",
+        type: 'numericGetSet',
+        digits: 6,
+        value: FocusManager.crownstoneState.currentConsumptionThreshold || null,
+        getCallback: async () => {
+          await this.bleAction(async () => {
+            FocusManager.crownstoneState.currentConsumptionThreshold = await from(this.props.handle).getCurrentConsumptionThreshold()
+            this.forceUpdate();
+          })
+        },
+        setCallback: async (value) => {
+          await this.bleAction(async () => {
+            await tell(this.props.handle).setCurrentConsumptionThreshold(value);
+            success();
+          }, failed);
+        }
+      });
 
 
 

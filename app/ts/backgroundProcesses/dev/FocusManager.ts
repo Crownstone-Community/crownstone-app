@@ -38,6 +38,7 @@ class FocusManagerClass {
     macAddress: null,
     voltageMultiplier: null,
     currentMultiplier: null,
+    currentConsumptionThreshold: null,
   }
 
   updateFreeze = {

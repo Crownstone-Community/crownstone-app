@@ -56,6 +56,8 @@ type BridgeCommandType = "addBehaviour"                     |
                          "setDimmerCurrentThreshold"        |
                          "setDimmerTempDownThreshold"       |
                          "setDimmerTempUpThreshold"         |
+                         "getCurrentConsumptionThreshold"   |
+                         "setCurrentConsumptionThreshold"   |
                          "setDoubleTapSwitchcraft"          |
                          "setMaxChipTemp"                   |
                          "setPowerZero"                     |

@@ -13,7 +13,7 @@ import {
   Command_GetBehaviour,
   Command_GetBehaviourDebugInformation,
   Command_GetBootloaderVersion,
-  Command_GetCrownstoneUptime,
+  Command_GetCrownstoneUptime, Command_GetCurrentConsumptionThreshold,
   Command_GetCurrentMultiplier,
   Command_GetCurrentZero,
   Command_GetDimmerCurrentThreshold,
@@ -46,7 +46,7 @@ import {
   Command_RequestCloudId,
   Command_RestartCrownstone,
   Command_SendMeshNoOp,
-  Command_SendNoOp,
+  Command_SendNoOp, Command_SetCurrentConsumptionThreshold,
   Command_SetCurrentMultiplier,
   Command_SetCurrentZero,
   Command_SetDimmerCurrentThreshold,
@@ -434,6 +434,12 @@ export class CommandAPI extends CommandMeshAPI {
   }
   async setCurrentZero(value: number) : Promise< void > {
     return this._load(new Command_SetCurrentZero(value));
+  }
+  async getCurrentConsumptionThreshold() : Promise< number > {
+    return this._load(new Command_GetCurrentConsumptionThreshold());
+  }
+  async setCurrentConsumptionThreshold(value: number) : Promise< void > {
+    return this._load(new Command_SetCurrentConsumptionThreshold(value));
   }
   async getPowerZero() : Promise< number > {
     return this._load(new Command_GetPowerZero());
