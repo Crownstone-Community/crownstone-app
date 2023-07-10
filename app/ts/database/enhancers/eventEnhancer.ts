@@ -37,13 +37,13 @@ export function EventEnhancer({ getState }) {
     let newState = getState();
 
     let eventData = {};
-    let affectedIds : AffectedIds = {locationIds:{}, sphereIds:{}, stoneIds:{}, messageIds:{} , toonIds:{}, hubIds:{}, id:{}};
+    let affectedIds : AffectedIds = {locationIds:{}, sphereIds:{}, stoneIds:{}, messageIds:{}, hubIds:{}, id:{}};
     if (action.type === BATCH && action.payload && Array.isArray(action.payload)) {
       action.payload.forEach((action) => {
         if (action.__noEvents !== true) {
           let {data, ids} = checkAction(action, affectedIds, oldState, newState);
           affectedIds = ids;
-          eventData = {...eventData, ...data}; 
+          eventData = {...eventData, ...data};
         }
       })
     }
@@ -71,7 +71,6 @@ function checkAction(action : DatabaseAction, affectedIds, oldState, newState) {
   if (action.sphereId)   { affectedIds.sphereIds[action.sphereId]     = true; affectedIds.id[action.sphereId]   = true; }
   if (action.stoneId)    { affectedIds.stoneIds[action.stoneId]       = true; affectedIds.id[action.stoneId]    = true; }
   if (action.messageId)  { affectedIds.messageIds[action.messageId]   = true; affectedIds.id[action.messageId]  = true; }
-  if (action.toonId)     { affectedIds.toonIds[action.toonId]         = true; affectedIds.id[action.toonId]     = true; }
   if (action.hubId)      { affectedIds.hubIds[action.hubId]           = true; affectedIds.id[action.hubId]      = true; }
 
   switch (action.type) {
@@ -293,12 +292,6 @@ function checkAction(action : DatabaseAction, affectedIds, oldState, newState) {
     case "ADD_SORTED_LIST":
     case "UPDATE_ABILITY_CLOUD_ID":
       break;
-    case "ADD_TOON":
-    case "TOON_UPDATE_SETTINGS":
-    case "TOON_UPDATE_SCHEDULE":
-    case "REMOVE_TOON":
-    case "REMOVE_ALL_TOONS":
-      eventStatus.updatedToon = affectedIds; break;
     case "UPDATE_MESSAGE_CLOUD_ID":
     case "UPDATE_LOCATION_CLOUD_ID":
     case "UPDATE_STONE_CLOUD_ID":

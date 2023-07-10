@@ -6,7 +6,6 @@ import {Bluenet} from '../native/libInterface/Bluenet';
 import {LOG, LOGe} from "../logging/Log";
 import {CLOUD} from "../cloud/cloudAPI";
 import {Util} from "./Util";
-// import * as Sentry from "@sentry/react-native";
 import {Scheduler} from "../logic/Scheduler";
 import {core} from "../Core";
 import {NavigationUtil} from "./navigation/NavigationUtil";
@@ -105,12 +104,6 @@ export const AppUtil = {
   },
 
   _logOut: function(store, gracefulExit) {
-    // Sentry.addBreadcrumb({
-    //   category: 'logout',
-    //   data: {
-    //     state:'startLogOut'
-    //   }
-    // });
     // TODO: Wait for possibly pending sync to stop
     core.eventBus.emit("showLoading", {text:lang("Logging_out_and_closing_a"), opacity:0.25});
 

@@ -133,18 +133,6 @@ const PreferenceProcessor = {
     sphereIds.forEach((sphereId) => {
       let sphere = state.spheres[sphereId];
 
-      // toon preferences
-      let toons = spheres[sphereId].thirdParty.toons;
-      let toonIds = Object.keys(toons);
-      toonIds.forEach((toonId) => {
-        let toon : ToonData = toons[toonId];
-        let property = prepareProperty(sphere, `toon_enabled.${toon.cloudId}`);
-        if (preferenceMap[property] === undefined) {
-          preferenceMap[property] = {value: {}};
-        }
-        preferenceMap[property].value = { enabled: toon.enabled };
-      });
-
       // store locations of rooms in sphere overview
       let locations = spheres[sphereId].locations;
       let positions = {};
@@ -184,12 +172,6 @@ const PreferenceProcessor = {
             let localLocationId = MapProvider.cloud2localMap.locations[locationCloudId] || locationCloudId;
             actions.push({type:"SET_LOCATION_POSITIONS", sphereId, locationId: localLocationId, data: positions[locationCloudId]})
           }
-          break;
-        case 'toon_enabled':
-          let toonId = props[0];
-          let data = preference.value;
-          let localToonId = MapProvider.cloud2localMap.toons[toonId];
-            actions.push({type:"TOON_UPDATE_SETTINGS", sphereId, toonId: localToonId, data: {enabled: data.enabled}})
           break;
         case 'sortedLists':
           let sortedLists = preference.value;

@@ -93,7 +93,6 @@ interface syncIdMap {
   spheres:           keyMap,
   schedules:         keyMap,
   devices:           keyMap,
-  toons:             keyMap,
   hubs:              keyMap,
   preferences:       keyMap,
 }

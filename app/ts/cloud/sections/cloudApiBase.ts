@@ -43,7 +43,6 @@ class TokenStoreClass {
   sceneId;
   sortedListId;
   stoneId;
-  toonId;
   hubId;
   userId;
 }
@@ -254,8 +253,5 @@ function _getId(url, obj) : string {
   if (messagesLocation !== -1 && messagesLocation < 3)
     return obj.messageId;
 
-  let toonsLocation = endpoint.indexOf('Toons');
-  if (toonsLocation !== -1 && toonsLocation < 3)
-    return obj.toonId;
 }
 

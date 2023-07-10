@@ -190,6 +190,8 @@ RCT_EXTERN_METHOD(getPowerZero:(NSString *)handle callback:(RCTResponseSenderBlo
 RCT_EXTERN_METHOD(setPowerZero:(NSString *)handle value:(nonnull NSNumber *)value callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(getVoltageMultiplier:(NSString *)handle callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(setVoltageMultiplier:(NSString *)handle value:(nonnull NSNumber *)value callback:(RCTResponseSenderBlock)callback)
+RCT_EXTERN_METHOD(getCurrentConsumptionThreshold:(NSString *)handle callback:(RCTResponseSenderBlock)callback)
+RCT_EXTERN_METHOD(setCurrentConsumptionThreshold:(NSString *)handle value:(nonnull NSNumber *)value callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(getCurrentMultiplier:(NSString *)handle callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(setCurrentMultiplier:(NSString *)handle value:(nonnull NSNumber *)value callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(setUartState:(NSString *)handle state:(nonnull NSNumber *)state callback:(RCTResponseSenderBlock)callback)

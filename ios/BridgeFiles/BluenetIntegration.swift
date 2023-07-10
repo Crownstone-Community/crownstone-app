@@ -1209,6 +1209,16 @@ open class BluenetJS: RCTEventEmitter {
         wrapForBluenet("setCurrentMultiplier", callback, GLOBAL_BLUENET.bluenet.config(handleUUID!).setCurrentMultiplier(value: value.floatValue), handle)
     }
     
+    @objc func getCurrentConsumptionThreshold(_ handle: String, callback: @escaping RCTResponseSenderBlock) {
+        let handleUUID = UUID(uuidString: handle)
+        wrapForBluenet("getCurrentConsumptionThreshold", callback, GLOBAL_BLUENET.bluenet.config(handleUUID!).getCurrentConsumptionThreshold(), handle)
+    }
+    
+    @objc func setCurrentConsumptionThreshold(_ handle: String, value: NSNumber, callback: @escaping RCTResponseSenderBlock) {
+        let handleUUID = UUID(uuidString: handle)
+        wrapForBluenet("setCurrentConsumptionThreshold", callback, GLOBAL_BLUENET.bluenet.config(handleUUID!).setCurrentConsumptionThreshold(value), handle)
+    }
+    
     @objc func setUartState(_ handle: String, state: NSNumber, callback: @escaping RCTResponseSenderBlock) {
         let handleUUID = UUID(uuidString: handle)
         wrapForBluenet("setUartState", callback, GLOBAL_BLUENET.bluenet.config(handleUUID!).setUartState(state), handle)

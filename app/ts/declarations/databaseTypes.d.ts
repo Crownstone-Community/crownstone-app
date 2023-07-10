@@ -72,7 +72,6 @@ interface DatabaseAction {
   abilityId?              : abilityId,
   propertyId?             : propertyId,
   userId?                 : string,
-  toonId?                 : string,
 
   eventId?                : string,
 
@@ -87,36 +86,36 @@ interface DatabaseAction {
 
 
 type SYSTEM_ACTION_TYPES = 'HYDRATE' | 'USER_LOGGED_OUT_CLEAR_STORE' | 'TESTS_CLEAR_STORE';
-type EVENT_ACTION_TYPES = 'CLOUD_EVENT_REMOVE_LOCATIONS'    |                                      
-                      'CLOUD_EVENT_REMOVE_STONES'           |                              
-                      'CLOUD_EVENT_REMOVE_USER'             |                            
-                      'CLOUD_EVENT_REMOVE_INSTALLATIONS'    |                                      
-                      'CLOUD_EVENT_REMOVE_DEVICES'          |                                
-                      'CLOUD_EVENT_REMOVE_MESSAGES'         |                                
-                      'CLOUD_EVENT_REMOVE_SCENES'           |                              
-                      'CLOUD_EVENT_REMOVE_BEHAVIOURS'       |                                  
-                      'CLOUD_EVENT_SPECIAL_USER'            |                              
-                      'CLOUD_EVENT_SPECIAL_SCENES'          |                                
-                      'CLOUD_EVENT_SPECIAL_BEHAVIOURS'      |                                    
-                      'CLOUD_EVENT_SPECIAL_LOCATIONS'       |                                  
-                      'CLOUD_EVENT_SPECIAL_STONES'          |                                
-                      'CLOUD_EVENT_SPECIAL_INSTALLATIONS'   |                                      
-                      'CLOUD_EVENT_SPECIAL_DEVICES'         |                                
-                      'CLOUD_EVENT_SPECIAL_MESSAGES'        |                                  
+type EVENT_ACTION_TYPES = 'CLOUD_EVENT_REMOVE_LOCATIONS'    |
+                      'CLOUD_EVENT_REMOVE_STONES'           |
+                      'CLOUD_EVENT_REMOVE_USER'             |
+                      'CLOUD_EVENT_REMOVE_INSTALLATIONS'    |
+                      'CLOUD_EVENT_REMOVE_DEVICES'          |
+                      'CLOUD_EVENT_REMOVE_MESSAGES'         |
+                      'CLOUD_EVENT_REMOVE_SCENES'           |
+                      'CLOUD_EVENT_REMOVE_BEHAVIOURS'       |
+                      'CLOUD_EVENT_SPECIAL_USER'            |
+                      'CLOUD_EVENT_SPECIAL_SCENES'          |
+                      'CLOUD_EVENT_SPECIAL_BEHAVIOURS'      |
+                      'CLOUD_EVENT_SPECIAL_LOCATIONS'       |
+                      'CLOUD_EVENT_SPECIAL_STONES'          |
+                      'CLOUD_EVENT_SPECIAL_INSTALLATIONS'   |
+                      'CLOUD_EVENT_SPECIAL_DEVICES'         |
+                      'CLOUD_EVENT_SPECIAL_MESSAGES'        |
                       'CLOUD_EVENT_REMOVE_FINGERPRINTS'     |
                       'FINISHED_CREATE_LOCATIONS'           |
-                      'FINISHED_CREATE_STONES'              |                            
-                      'FINISHED_CREATE_INSTALLATIONS'       |                                  
-                      'FINISHED_CREATE_DEVICES'             |                            
-                      'FINISHED_CREATE_MESSAGES'            |                              
-                      'FINISHED_UPDATE_LOCATIONS'           |                              
-                      'FINISHED_UPDATE_STONES'              |                            
-                      'FINISHED_UPDATE_INSTALLATIONS'       |                                  
-                      'FINISHED_UPDATE_DEVICES'             |                            
-                      'FINISHED_UPDATE_MESSAGES'            |                              
-                      'FINISHED_REMOVE_LOCATIONS'           |                              
-                      'FINISHED_REMOVE_STONES'              |                            
-                      'FINISHED_REMOVE_INSTALLATIONS'       |                                  
+                      'FINISHED_CREATE_STONES'              |
+                      'FINISHED_CREATE_INSTALLATIONS'       |
+                      'FINISHED_CREATE_DEVICES'             |
+                      'FINISHED_CREATE_MESSAGES'            |
+                      'FINISHED_UPDATE_LOCATIONS'           |
+                      'FINISHED_UPDATE_STONES'              |
+                      'FINISHED_UPDATE_INSTALLATIONS'       |
+                      'FINISHED_UPDATE_DEVICES'             |
+                      'FINISHED_UPDATE_MESSAGES'            |
+                      'FINISHED_REMOVE_LOCATIONS'           |
+                      'FINISHED_REMOVE_STONES'              |
+                      'FINISHED_REMOVE_INSTALLATIONS'       |
                       'FINISHED_REMOVE_BEHAVIOURS'          |
                       'FINISHED_REMOVE_DEVICES'             |
                       'FINISHED_REMOVE_MESSAGES'            |
@@ -151,7 +150,6 @@ type ACTION_TYPE = SYSTEM_ACTION_TYPES | EVENT_ACTION_TYPES      |
   'ADD_STONE'                                    |
   'ADD_STONE_BEHAVIOUR'                          |
   'ADD_STONE_KEY'                                |
-  'ADD_TOON'                                     |
   'APPEND_MESSAGE'                               |
   'CHANGE_DEV_SETTINGS'                          |
   'CLEAR_ACTIVE_SPHERE'                          |
@@ -190,7 +188,6 @@ type ACTION_TYPE = SYSTEM_ACTION_TYPES | EVENT_ACTION_TYPES      |
   'REMOVE_ALL_HUE_LIGHTS'                        |
   'REMOVE_ALL_PROCESSED_FINGERPRINTS'            |
   'REMOVE_ALL_SCENES'                            |
-  'REMOVE_ALL_TOONS'                             |
   'REMOVE_DEVICE'                                |
   'REMOVE_FINGERPRINT_V2'                        |
   'REMOVE_HUB'                                   |
@@ -213,7 +210,6 @@ type ACTION_TYPE = SYSTEM_ACTION_TYPES | EVENT_ACTION_TYPES      |
   'REMOVE_STONE'                                 |
   'REMOVE_STONE_BEHAVIOUR'                       |
   'REMOVE_STONE_KEY'                             |
-  'REMOVE_TOON'                                  |
   'REMOVE_USER_FROM_ALL_LOCATIONS'               |
   'RESET_APP_SETTINGS'                           |
   'RESET_SPHERE_PRESENCE_STATE'                  |
@@ -238,8 +234,6 @@ type ACTION_TYPE = SYSTEM_ACTION_TYPES | EVENT_ACTION_TYPES      |
   'SET_TRACKING_NUMBER'                          |
   'SPHERE_SCENE_REPAIR_PICTURE'                  |
   'SPHERE_USER_REPAIR_PICTURE'                   |
-  'TOON_UPDATE_SCHEDULE'                         |
-  'TOON_UPDATE_SETTINGS'                         |
   'TRY_NEW_DEVICE_TOKEN'                         |
   'UPDATED_STONE_TIME'                           |
   'UPDATE_ABILITY'                               |
@@ -302,8 +296,6 @@ type ACTION_TYPE = SYSTEM_ACTION_TYPES | EVENT_ACTION_TYPES      |
   'UPDATE_STONE_SWITCH_STATE'                    |
   'UPDATE_STONE_SWITCH_STATE_TRANSIENT'          |
   'UPDATE_STONE_TIME_STATE'                      |
-  'UPDATE_TOON'                                  |
-  'UPDATE_TOON_CLOUD_ID'                         |
   'REMOVE_ALL_TRANSFORMS'                        |
   'REMOVE_TRANSFORM'                             |
   'ADD_TRANSFORM'                                |
@@ -329,7 +321,6 @@ interface AffectedIds {
   sphereIds:   Record<databaseId, true>,
   stoneIds:    Record<databaseId, true>,
   messageIds:  Record<databaseId, true>,
-  toonIds:     Record<databaseId, true>,
   hubIds:      Record<databaseId, true>,
   id:          Record<databaseId, true>
 }
@@ -384,7 +375,6 @@ type DatabaseEventType = 'updateActiveSphere' |
   'changeScenes'                    |
   'updateScene'                     |
   'changeAppSettings'               |
-  'updatedToon'                     |
   'updatedCloudIds'                 |
   'stoneUsageUpdatedTransient'      |
   'updatedSphereKeys'               |

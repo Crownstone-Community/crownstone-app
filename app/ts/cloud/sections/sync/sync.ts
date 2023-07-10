@@ -7,7 +7,6 @@ import {SphereSyncer} from "./modelSyncs/SphereSyncer";
 import {DeviceSyncer} from "./modelSyncs/DeviceSyncer";
 import {getSyncIdMap} from "./modelSyncs/SyncingBase";
 import {Scheduler} from "../../../logic/Scheduler";
-// import * as Sentry from "@sentry/react-native";
 import {PreferenceSyncer} from "./modelSyncs/PreferencesSyncer";
 import {core} from "../../../Core";
 import {CloudPoller} from "../../../logic/CloudPoller";
@@ -57,13 +56,6 @@ export const sync = {
 
     core.eventBus.emit("CloudSyncStarting");
 
-    // Sentry.addBreadcrumb({
-    //   category: 'sync',
-    //   data: {
-    //     state:'start'
-    //   }
-    // });
-
     let globalCloudIdMap = getSyncIdMap();
     let syncSphereIdMap = {};
 
@@ -101,7 +93,6 @@ export const sync = {
           'scenes',
           // 'spheres',
           'stones',
-          'toons',
           'user',
         ], actions, globalCloudIdMap);
       })
@@ -165,13 +156,6 @@ export const sync = {
         CLOUD.__syncTriggerDatabaseEvents = true;
         cancelFallbackCallback();
 
-        // Sentry.addBreadcrumb({
-        //   category: 'sync',
-        //   data: {
-        //     state:'success'
-        //   }
-        // });
-
         core.eventBus.emit("CloudSyncComplete");
 
         console.log("SYNC COMPLETE!")
@@ -183,17 +167,7 @@ export const sync = {
           action.__triggeredBySync = true;
         });
 
-        // if (actions.length > 0) {
-        //   core.store.batchDispatch(actions);
-        // }
 
-        // Sentry.addBreadcrumb({
-        //   category: 'sync',
-        //   data: {
-        //     state:'failed',
-        //     err: err
-        //   }
-        // });
 
         CLOUD.__currentlySyncing = false;
         CLOUD.__syncTriggerDatabaseEvents = true;

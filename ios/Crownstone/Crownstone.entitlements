@@ -6,10 +6,10 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:my.crownstone.rocks</string>
-		<string>applinks:cloud.crownstone.rocks</string>
-		<string>webcredentials:my.crownstone.rocks</string>
-		<string>webcredentials:cloud.crownstone.rocks</string>
+		<string>applinks:cloud.ownstone.org</string>
+		<string>applinks:my.ownstone.org</string>
+		<string>webcredentials:my.ownstone.org</string>
+		<string>webcredentials:cloud.ownstone.org</string>
 	</array>
 </dict>
 </plist>

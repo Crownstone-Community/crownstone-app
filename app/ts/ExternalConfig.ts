@@ -10,10 +10,6 @@ import { Platform } from "react-native";
 
   export const FALLBACKS_ENABLED = true;
 
-  // possiblity to block Sentry
-  // @ts-ignore
-  export let USE_ERROR_REPORTING = DeviceInfo.getModel() !== "Simulator" && global.__DEV__ !== true;
-
   // DO NOT CHANGE THIS LINE.
   // the global is meant as a last resort, forcing release to true when compiled in release mode.
   // @ts-ignore
@@ -27,7 +23,7 @@ import { Platform } from "react-native";
   export const DEBUG_MODE_ENABLED = false;
 
 /******************** /RELEASE FLAGS ********************/
- 
+
 
 /**
  *  DO NOT CHANGE THESE VALUES BELOW THIS LINE. YOU CAN CHANGE THEM IN THE LOCAL CONFIG FILE!
@@ -36,7 +32,7 @@ import { Platform } from "react-native";
  *  The local file is ignored if RELEASE_MODE is set to true.
  */
 
- 
+
 /******************** APP ********************/
 
   /**
@@ -63,9 +59,9 @@ import { Platform } from "react-native";
   /**
    * Point to the production cloud.
    */
-  export let CLOUD_ADDRESS    = 'https://cloud.crownstone.rocks/api/';
-  export let SSE_ADDRESS      = 'https://events.crownstone.rocks/sse/';
-  export let CLOUD_V2_ADDRESS = 'https://next.crownstone.rocks/api/';
+  export let CLOUD_ADDRESS    = 'https://cloud.ownstone.org//api/';
+  export let SSE_ADDRESS      = 'https://events.ownstone.org/sse/';
+  export let CLOUD_V2_ADDRESS = 'https://next.ownstone.org/api/';
 
 
 /**

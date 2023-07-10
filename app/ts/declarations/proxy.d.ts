@@ -131,7 +131,7 @@ interface BluenetPromiseWrapperProtocol {
 
   /**
    * Set time via broadcast.
-   * 
+   *
    * @param time
    * @param sunriseSecondsSinceMidnight
    * @param sunsetSecondsSinceMidnight
@@ -164,7 +164,7 @@ interface BluenetPromiseWrapperProtocol {
 
   /**
    * Broadcast switch.
-   * 
+   *
    * @param referenceId                     The sphere ID.
    * @param stoneId
    * @param switchState
@@ -174,7 +174,7 @@ interface BluenetPromiseWrapperProtocol {
 
   /**
    * Broadcast behaviour settings.
-   * 
+   *
    * @param referenceId                     The sphere ID.
    * @param enabled
    */
@@ -225,6 +225,8 @@ interface BluenetPromiseWrapperProtocol {
   setVoltageMultiplier(handle: handle, value: number)                   : Promise< void >,
   getCurrentMultiplier(handle: handle)                                  : Promise< number >,
   setCurrentMultiplier(handle: handle, value: number)                   : Promise< void >,
+  getCurrentConsumptionThreshold(handle: handle)                        : Promise< number >,
+  setCurrentConsumptionThreshold(handle: handle, value: number)         : Promise< void >,
   setUartState(handle: handle, value: 0 | 1 | 3)                        : Promise< number >,
   getBehaviourDebugInformation(handle: handle)                          : Promise< behaviourDebug >,
 
@@ -232,7 +234,7 @@ interface BluenetPromiseWrapperProtocol {
 
   /**
    * Broadcast turn on.
-   * 
+   *
    * @param referenceId                     The sphere ID.
    * @param stoneId
    * @param autoExecute
@@ -260,7 +262,7 @@ interface BluenetPromiseWrapperProtocol {
 
   /**
    * Broadcast update tracked device.
-   * 
+   *
    * @param referenceId                     The sphere ID.
    */
   broadcastUpdateTrackedDevice(
@@ -359,21 +361,21 @@ interface BridgeInterface extends BluenetPromiseWrapperProtocol {
 
 
 interface UICRData {
-  board          : number, 
-  productType    : number, 
-  region         : number, 
-  productFamily  : number, 
-  reserved1      : number, 
+  board          : number,
+  productType    : number,
+  region         : number,
+  productFamily  : number,
+  reserved1      : number,
 
-  hardwarePatch  : number, 
-  hardwareMinor  : number, 
-  hardwareMajor  : number, 
-  reserved2      : number, 
+  hardwarePatch  : number,
+  hardwareMinor  : number,
+  hardwareMajor  : number,
+  reserved2      : number,
 
-  productHousing : number, 
-  productionWeek : number, 
+  productHousing : number,
+  productionWeek : number,
   productionYear : number,
-  reserved3      : number, 
+  reserved3      : number,
 }
 
 interface GPREGRET {

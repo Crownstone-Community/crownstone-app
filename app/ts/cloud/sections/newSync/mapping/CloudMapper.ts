@@ -1,5 +1,4 @@
 import { LocationTransferNext }  from "../transferrers/LocationTransferNext";
-import { ToonTransferNext }      from "../transferrers/ToonTransferNext";
 import { StoneTransferNext }     from "../transferrers/StoneTransferNext";
 import { SceneTransferNext }     from "../transferrers/SceneTransferNext";
 import { HubTransferNext }       from "../transferrers/HubTransferNext";
@@ -38,8 +37,6 @@ export function mapLocalToCloud(item: any, type: SupportedMappingType) {
       return null;
     case 'stone':
       return StoneTransferNext.mapLocalToCloud(item as StoneData);
-    case 'toon':
-      return ToonTransferNext.mapLocalToCloud(item as ToonData);
     default:
       throw new Error("NOT_SUPPORTED");
   }

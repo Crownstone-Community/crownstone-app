@@ -80,11 +80,6 @@ export const Get = {
     return sphere?.scenes?.[sceneId] || null;
   },
 
-  toon(sphereId: string, toonId: string) : ToonData | null {
-    let sphere = Get.sphere(sphereId);
-    return sphere?.thirdParty?.toon?.[toonId] || null;
-  },
-
   fingerprint(sphereId: string, locationId: string, fingerprintId) : FingerprintData | null {
     let location = Get.location(sphereId,locationId);
     if (!location) { return null; }

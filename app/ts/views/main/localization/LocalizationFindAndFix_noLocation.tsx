@@ -6,7 +6,6 @@ function lang(key,a?,b?,c?,d?,e?) {
 }
 import * as React from 'react';
 import { Platform, Vibration, Text, View, TextStyle, ActivityIndicator, Alert } from "react-native";
-import { LiveComponent } from "../../LiveComponent";
 import { Get } from "../../../util/GetUtil";
 import { TopBarUtil } from "../../../util/TopBarUtil";
 import { colors, screenHeight, screenWidth, styles, topBarHeight } from "../../styles";

@@ -17,15 +17,12 @@ import {
 import { setupStyle, CancelButton } from '../settingsViews/SetupShared'
 
 
-import { Background } from '../components/Background'
 import { styles, colors} from '../styles'
-import { Icon } from '../components/Icon';
 import { SettingsBackground, SettingsNavbarBackground } from "../components/SettingsBackground";
 import { TopBarUtil } from "../../util/TopBarUtil";
 import { LiveComponent } from "../LiveComponent";
 import { ListEditableItems } from "../components/ListEditableItems";
 import { CloudAddresses } from "../../backgroundProcesses/indirections/CloudAddresses";
-import { cloudHi } from "../../cloud/sections/hi";
 import { CLOUD } from "../../cloud/cloudAPI";
 import { CLOUD_ADDRESS, CLOUD_V2_ADDRESS, SSE_ADDRESS } from "../../ExternalConfig";
 import { NavigationUtil } from "../../util/navigation/NavigationUtil";
@@ -77,9 +74,9 @@ lang("_The_changes_are_not_stor_body"),
 
   async validate() {
     core.eventBus.emit("showLoading", "Validating...");
-    this.cloudV1Address = this.state.cloudV1Address; // 'https://cloud.crownstone.rocks/api/';
-    this.cloudV2Address = this.state.cloudV2Address; // 'https://next.crownstone.rocks/api/';
-    this.sseAddress     = this.state.sseAddress;     // 'https://events.crownstone.rocks/sse/';
+    this.cloudV1Address = this.state.cloudV1Address; // 'https://cloud.ownstone.org/api/';
+    this.cloudV2Address = this.state.cloudV2Address; // 'https://next.ownstone.org/api/';
+    this.sseAddress     = this.state.sseAddress;     // 'https://events.ownstone.org/sse/';
 
     if (!urlChecker(this.cloudV1Address)) {
       Alert.alert(

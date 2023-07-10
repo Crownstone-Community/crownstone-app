@@ -29,7 +29,6 @@ import {NavigationUtil} from "../../util/navigation/NavigationUtil";
 import {createNewSphere} from "../../util/CreateSphere";
 import {Stacks} from "../Stacks";
 import {base_core} from "../../Base_core";
-// import * as Sentry from "@sentry/react-native";
 import {BackgroundProcessHandler} from "../../backgroundProcesses/BackgroundProcessHandler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CustomTopBarWrapper } from "../components/CustomTopBarWrapper";
@@ -361,7 +360,7 @@ export class Login extends Component<any, any> {
 
   downloadSettings(userId) {
     core.eventBus.emit('userActivated');
-    
+
     let parts = 1/6;
     let promises = [];
 

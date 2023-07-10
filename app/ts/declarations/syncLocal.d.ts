@@ -9,8 +9,7 @@ type SupportedMappingType = 'ability'         |
                             'location'        |
                             'scene'           |
                             'sphereUser'      |
-                            'stone'           |
-                            'toon'
+                            'stone'           
 
 type SyncInterfaceOptions = {
   cloudId:          string,

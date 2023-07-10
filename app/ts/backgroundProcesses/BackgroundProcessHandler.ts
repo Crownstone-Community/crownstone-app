@@ -25,7 +25,6 @@ import {LOG, LOGe, LOGw} from "../logging/Log";
 import {LogProcessor} from "../logging/LogProcessor";
 import {BleLogger} from "../native/advertisements/BleLogger";
 import {StoneManager} from "../native/advertisements/StoneManager";
-import {ToonIntegration} from "./thirdParty/ToonIntegration";
 import {EncryptionManager} from "../native/libInterface/Encryption";
 import {BroadcastStateManager} from "./BroadcastStateManager";
 import {WatchStateManager} from "./WatchStateManager";
@@ -265,13 +264,13 @@ class BackgroundProcessHandlerClass {
     if (currentDeviceSpecs.address && deviceInDatabaseId) {
       let deviceInDatabase = state.devices[deviceInDatabaseId];
       // if the address matches but the name does not, update the device name in the cloud.
-      if (deviceInDatabase.address === currentDeviceSpecs.address && 
-        (currentDeviceSpecs.name != deviceInDatabase.name) || 
-        (currentDeviceSpecs.os != deviceInDatabase.os) || 
-        (currentDeviceSpecs.userAgent != deviceInDatabase.userAgent) || 
-        (currentDeviceSpecs.deviceType != deviceInDatabase.deviceType) || 
-        (currentDeviceSpecs.model != deviceInDatabase.model) || 
-        (currentDeviceSpecs.locale != deviceInDatabase.locale) || 
+      if (deviceInDatabase.address === currentDeviceSpecs.address &&
+        (currentDeviceSpecs.name != deviceInDatabase.name) ||
+        (currentDeviceSpecs.os != deviceInDatabase.os) ||
+        (currentDeviceSpecs.userAgent != deviceInDatabase.userAgent) ||
+        (currentDeviceSpecs.deviceType != deviceInDatabase.deviceType) ||
+        (currentDeviceSpecs.model != deviceInDatabase.model) ||
+        (currentDeviceSpecs.locale != deviceInDatabase.locale) ||
         (currentDeviceSpecs.description != deviceInDatabase.description))
         {
         core.store.dispatch({type: 'UPDATE_DEVICE_CONFIG', deviceId: deviceInDatabaseId, data: {
@@ -489,7 +488,6 @@ class BackgroundProcessHandlerClass {
     SphereStateManager.init();
     TrackingNumberManager.init();
     TimeKeeper.init();
-    ToonIntegration.init();
     UpdateCenter.init();
     UptimeMonitor.init();
     WatchStateManager.init();

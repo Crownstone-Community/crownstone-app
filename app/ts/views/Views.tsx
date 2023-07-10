@@ -47,9 +47,6 @@ import { SettingsRedownloadFromCloud }        from '../views/settingsViews/Setti
 import { SettingsStoneBleDebug }              from '../views/settingsViews/dev/SettingsStoneBleDebug'
 import { SettingsBleTroubleshooting }         from '../views/settingsViews/SettingsBleTroubleshooting'
 import { IconDebug }                          from "../views/development/IconDebug";
-import { ToonAdd }                            from "../views/thirdParty/toon/ToonAdd";
-import { ToonSettings }                       from "../views/thirdParty/toon/ToonSettings";
-import { ToonOverview }                       from "../views/thirdParty/toon/ToonOverview";
 import { DeviceSmartBehaviour }               from "../views/deviceViews/smartBehaviour/DeviceSmartBehaviour";
 import { DeviceSmartBehaviour_TypeSelector }  from "../views/deviceViews/smartBehaviour/DeviceSmartBehaviour_TypeSelector";
 import { DeviceSmartBehaviour_Editor }        from "../views/deviceViews/smartBehaviour/DeviceSmartBehaviour_Editor";
@@ -225,9 +222,6 @@ export const Views = {
   SphereUser:                        SphereUser,
   SphereUserInvite:                  SphereUserInvite,
   SphereUserOverview:                SphereUserOverview,
-  ToonAdd:                           ToonAdd,
-  ToonOverview:                      ToonOverview,
-  ToonSettings:                      ToonSettings,
   HueOverview:                       HueOverview,
   HueAdd:                            HueAdd,
 

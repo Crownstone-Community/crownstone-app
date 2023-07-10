@@ -390,28 +390,6 @@ interface cloud_SphereTrackingNumber {
   updatedAt: string,
 }
 
-interface cloud_Toon {
-  id: string,
-  toonAgreementId: string,
-  toonAddress: string,
-  refreshToken: string,
-  refreshTokenTTL: number;
-  refreshTokenUpdatedAt: number;
-  refreshTokenUpdatedFrom: number;
-  schedule: string,
-  updatedScheduleTime: number;
-  changedToProgram: string,
-  changedProgramTime: number;
-  sphereId: string,
-  createdAt: string,
-  updatedAt: string,
-}
-
-interface cloud_Toon_settable {
-  toonAgreementId: string,
-  toonAddress: string,
-  updatedAt: string,
-}
 
 interface ActiveDays {
   Mon: boolean;

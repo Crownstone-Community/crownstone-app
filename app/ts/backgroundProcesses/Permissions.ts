@@ -10,7 +10,6 @@ export class PermissionBase {
   canDeleteExternalFingerprints = false; // a
   useKeepAliveState          = false; // m
   setStoneTime               = false; // a or m
-  setToonInCloud             = false; // a
   setBehaviourInCloud        = false; // a
   seeUpdateCrownstone        = false; // a?
   canUpdateCrownstone        = false; // a
@@ -137,7 +136,6 @@ export class PermissionClass extends PermissionBase {
       case 'admin':
         this.canDeleteExternalFingerprints   = true; // admin
         this.setBehaviourInCloud     = true; // admin
-        this.setToonInCloud          = true; // admin
         this.seeUpdateCrownstone     = true; // admin
         this.canUpdateCrownstone     = true; // admin
         this.canSetupCrownstone      = true; // admin

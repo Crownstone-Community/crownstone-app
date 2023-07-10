@@ -14,9 +14,6 @@ import { Platform } from "react-native";
 
   export const FALLBACKS_ENABLED = true;
 
-  // possiblity to block Sentry
-  export let USE_ERROR_REPORTING = true;
-
   // DO NOT CHANGE THIS LINE.
   // the global is meant as a last resort, forcing release to true when compiled in release mode.
   // @ts-ignore
@@ -65,8 +62,9 @@ import { Platform } from "react-native";
   /**
    * Point to the production cloud.
    */
-  export let CLOUD_ADDRESS    = 'https://cloud.crownstone.rocks/api/';
-  export let CLOUD_V2_ADDRESS = 'https://next.crownstone.rocks/api/';
+  export let CLOUD_ADDRESS    = 'https://cloud.ownstone.org//api/';
+  export let SSE_ADDRESS      = 'https://events.ownstone.org/sse/';
+  export let CLOUD_V2_ADDRESS = 'https://next.ownstone.org/api/';
 
   /**
    * The app will not allow usage of crownstones with a lower version than this.

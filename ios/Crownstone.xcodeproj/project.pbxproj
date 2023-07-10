@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CrownstoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrownstoneTests.m */; };
+		926BBDA72A5C2B6700D8E0E0 /* BluenetLib in Frameworks */ = {isa = PBXBuildFile; productRef = 926BBDA62A5C2B6700D8E0E0 /* BluenetLib */; };
 		976A993272B2E3694D333A07 /* libPods-Crownstone-CrownstoneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C081F04EB7F8B7237DA080F6 /* libPods-Crownstone-CrownstoneTests.a */; };
 		F565541EA0E74560636016AB /* libPods-Crownstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD56EF91E4960067C3F6026 /* libPods-Crownstone.a */; };
 		FA0177CF1FC462F5001C8FD6 /* ErrorTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0177CE1FC462F5001C8FD6 /* ErrorTranslator.swift */; };
@@ -15,8 +16,6 @@
 		FA0177D61FC46385001C8FD6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0177D51FC46385001C8FD6 /* Logger.swift */; };
 		FA0177D81FC46412001C8FD6 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0177D71FC46412001C8FD6 /* EventEmitter.swift */; };
 		FA0DD9CD21DFCCED00824ABF /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DD9CC21DFCCED00824ABF /* DataStore.swift */; };
-		FA12D41D28D1EB0000B02BF3 /* BluenetLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA12D41C28D1EB0000B02BF3 /* BluenetLib */; };
-		FA12D41F28D1EBC800B02BF3 /* BluenetLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA12D41E28D1EBC800B02BF3 /* BluenetLib */; };
 		FA39A49D2743DAF100A63C79 /* BluenetShared in Frameworks */ = {isa = PBXBuildFile; productRef = FA39A49C2743DAF100A63C79 /* BluenetShared */; };
 		FA39A5502744037700A63C79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA39A54D2744037700A63C79 /* main.m */; };
 		FA39A5512744037700A63C79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA39A54F2744037700A63C79 /* AppDelegate.m */; };
@@ -641,7 +640,7 @@
 			files = (
 				FA39A49D2743DAF100A63C79 /* BluenetShared in Frameworks */,
 				F565541EA0E74560636016AB /* libPods-Crownstone.a in Frameworks */,
-				FA12D41D28D1EB0000B02BF3 /* BluenetLib in Frameworks */,
+				926BBDA72A5C2B6700D8E0E0 /* BluenetLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +655,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA12D41F28D1EBC800B02BF3 /* BluenetLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,7 +1045,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				CA99FB1D38C9422994E78685 /* Upload source maps to Bugsnag */,
 				FA86C6D921CCEED000811933 /* Embed Watch Content */,
 				FC8603A6D0736BC001CB6DF8 /* [CP] Copy Pods Resources */,
 			);
@@ -1059,7 +1056,7 @@
 			name = Crownstone;
 			packageProductDependencies = (
 				FA39A49C2743DAF100A63C79 /* BluenetShared */,
-				FA12D41C28D1EB0000B02BF3 /* BluenetLib */,
+				926BBDA62A5C2B6700D8E0E0 /* BluenetLib */,
 			);
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* Crownstone.app */;
@@ -1099,7 +1096,6 @@
 			);
 			name = "WatchTower Extension";
 			packageProductDependencies = (
-				FA12D41E28D1EBC800B02BF3 /* BluenetLib */,
 			);
 			productName = "WatchTower Extension";
 			productReference = FA86C68A21CCEECF00811933 /* WatchTower Extension.appex */;
@@ -1158,7 +1154,7 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
 				FAD5FD8526270088005492CA /* XCRemoteSwiftPackageReference "bluenet-ios-shared" */,
-				FA12D41B28D1EB0000B02BF3 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */,
+				926BBDA52A5C2B6700D8E0E0 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -1735,20 +1731,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA99FB1D38C9422994E78685 /* Upload source maps to Bugsnag */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Upload source maps to Bugsnag";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export SOURCE_MAP=\"$TMPDIR/$(md5 -qs \"$CONFIGURATION_BUILD_DIR\")-main.jsbundle.map\" \nsource ~/.zprofile\nsource ~/.zshrc\n\n../node_modules/@bugsnag/react-native/bugsnag-react-native-xcode.sh\n";
-		};
 		F92AF5335F4E575EDED0D08E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2152,7 +2134,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2195,7 +2177,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2363,7 +2345,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crownstone.Crownstone.watchkitapp;
@@ -2426,7 +2408,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crownstone.Crownstone.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2479,7 +2461,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "";
@@ -2534,7 +2516,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 6.0.1;
+				MARKETING_VERSION = 6.1.0;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crownstone.Crownstone.watchkitapp.watchkitextension;
@@ -2599,12 +2581,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA12D41B28D1EB0000B02BF3 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */ = {
+		926BBDA52A5C2B6700D8E0E0 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/crownstone/bluenet-ios-lib";
+			repositoryURL = "https://github.com/crownstone-community/bluenet-ios-lib";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 30.1.0;
+				minimumVersion = 30.2.1;
 			};
 		};
 		FAD5FD8526270088005492CA /* XCRemoteSwiftPackageReference "bluenet-ios-shared" */ = {
@@ -2618,14 +2600,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA12D41C28D1EB0000B02BF3 /* BluenetLib */ = {
+		926BBDA62A5C2B6700D8E0E0 /* BluenetLib */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA12D41B28D1EB0000B02BF3 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */;
-			productName = BluenetLib;
-		};
-		FA12D41E28D1EBC800B02BF3 /* BluenetLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA12D41B28D1EB0000B02BF3 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */;
+			package = 926BBDA52A5C2B6700D8E0E0 /* XCRemoteSwiftPackageReference "bluenet-ios-lib" */;
 			productName = BluenetLib;
 		};
 		FA39A49C2743DAF100A63C79 /* BluenetShared */ = {

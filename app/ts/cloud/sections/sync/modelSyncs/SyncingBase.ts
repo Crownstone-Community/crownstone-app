@@ -140,7 +140,6 @@ export function getSyncIdMap() : syncIdMap {
     spheres:            {},
     schedules:          {},
     hubs:               {},
-    toons:              {},
     users:              {},
   }
 }

@@ -64,7 +64,6 @@ class MapProviderClass {
           change.changeScenes          ||
           change.changeStoneHandle     ||
           change.changeDeviceData      ||
-          change.updatedToon           ||
           change.updatedCloudIds       ||
           change.updateStoneConfig     ||
           change.changeMessage
@@ -193,7 +192,6 @@ class MapProviderClass {
       getFromConfig( sphereId, sphere.stones,           this.cloud2localMap.stones,     this.local2cloudMap.stones);
       getFromConfig( sphereId, sphere.hubs,             this.cloud2localMap.hubs,       this.local2cloudMap.hubs);
       getFromItem(   sphereId, sphere.scenes,           this.cloud2localMap.scenes,     this.local2cloudMap.scenes);
-      getFromItem(   sphereId, sphere.thirdParty.toons, this.cloud2localMap.toons,      this.local2cloudMap.toons);
       getFromIdPerSphere(sphereId, sphere.users,        this.cloud2localMap.users,      this.local2cloudMap.users);
 
 

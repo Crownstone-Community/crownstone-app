@@ -21,7 +21,6 @@ import { syncUsersInSphere } from './sections/sync/syncUsersInSphere'
 import { transforms }        from './sections/transforms'
 import { user }              from './sections/user'
 
-import { toon }              from './sections/thirdParty/toon'
 import { xUtil }             from "../util/StandAloneUtil";
 import { MapProvider }       from "../backgroundProcesses/MapProvider";
 import { hubs }              from "./sections/hub";
@@ -56,9 +55,6 @@ function combineSections() {
   xUtil.mixin(result, transforms,        result);
   xUtil.mixin(result, user,              result);
 
-  result["thirdParty"] = {toon:{}};
-  xUtil.mixin(result.thirdParty.toon, toon, result);
-
   return result;
 }
 
@@ -77,7 +73,6 @@ CLOUD.forSphere =       function(localSphereId)     : any { TokenStore.sphereId 
 CLOUD.forScene =        function(localSceneId)      : any { TokenStore.sceneId      = MapProvider.local2cloudMap.scenes[localSceneId]           || localSceneId;      return CLOUD; };
 CLOUD.forLocation =     function(localLocationId)   : any { TokenStore.locationId   = MapProvider.local2cloudMap.locations[localLocationId]     || localLocationId;   return CLOUD; };
 CLOUD.forMessage =      function(localMessageId)    : any { TokenStore.messageId    = MapProvider.local2cloudMap.messages[localMessageId]       || localMessageId;    return CLOUD; };
-CLOUD.forToon =         function(localToonId)       : any { TokenStore.toonId       = MapProvider.local2cloudMap.toons[localToonId]             || localToonId;       return CLOUD; };
 CLOUD.forHub =          function(localHubId)        : any { TokenStore.hubId        = MapProvider.local2cloudMap.hubs[localHubId]               || localHubId;       return CLOUD; };
 
 

@@ -3,7 +3,6 @@ import { DISABLE_NATIVE } from '../../ExternalConfig'
 import { LOGi }      from '../../logging/Log'
 import { Bluenet }        from './Bluenet'
 import { core } from "../../Core";
-import { BugReportUtil } from "../../util/BugReportUtil";
 import {BridgeMock} from "../../backgroundProcesses/testing/BridgeMock";
 import {BridgeConfig} from "./BridgeConfig";
 
@@ -24,37 +23,16 @@ export const BluenetPromise : any = function(functionName) : Promise<void>  {
       return resolve()
     }
 
-    BugReportUtil.breadcrumb("BLE: Started Command",{
-      functionCalled: functionName,
-      id: id,
-      arg: bluenetArguments.length > 0 ? bluenetArguments[0] : "NO_ARG",
-      t: Date.now(),
-      state: 'started',
-    }, "state");
-
     let promiseResolver = (result) => {
       delete OPEN_PROMISES[id];
       LOGi.constellation("BluenetPromise: donePromise Amount of currently open promises:", Object.keys(OPEN_PROMISES).length);
 
       if (result.error === true) {
         LOGi.constellation("BluenetPromise: promise rejected in bridge: ", functionName, " error:", result.data, "for ID:", id, "AppState:", AppState.currentState);
-        BugReportUtil.breadcrumb("BLE: Failed Command",{
-          functionCalled: functionName,
-          id: id,
-          t: Date.now(),
-          state: 'failed',
-          err: result.data
-        }, "state");
         reject(new Error(result.data));
       }
       else {
         LOGi.constellation("BluenetPromise: promise resolved in bridge: ", functionName, " with data:", result.data, "for ID:", id, "AppState:", AppState.currentState);
-        BugReportUtil.breadcrumb("BLE: Finished Command",{
-          functionCalled: functionName,
-          id: id,
-          t: Date.now(),
-          state: 'success',
-        }, "state");
         resolve(result.data);
       }
     };
@@ -202,6 +180,8 @@ export const BluenetPromiseWrapper : BluenetPromiseWrapperProtocol = {
   setVoltageMultiplier:           (handle: string, value) => { return BluenetPromise('setVoltageMultiplier', handle, value)},
   getCurrentMultiplier:           (handle: string)        => { return BluenetPromise('getCurrentMultiplier', handle)},
   setCurrentMultiplier:           (handle: string, value) => { return BluenetPromise('setCurrentMultiplier', handle, value)},
+  getCurrentConsumptionThreshold: (handle: string)        => { return BluenetPromise('getCurrentConsumptionThreshold', handle)},
+  setCurrentConsumptionThreshold: (handle: string, value) => { return BluenetPromise('setCurrentConsumptionThreshold', handle, value)},
   setUartState:                   (handle: string, value) => { return BluenetPromise('setUartState', handle, value)},
 
   getBehaviourDebugInformation:     (handle: string) => { return BluenetPromise('getBehaviourDebugInformation', handle); },

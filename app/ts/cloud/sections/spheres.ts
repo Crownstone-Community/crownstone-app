@@ -146,9 +146,6 @@ export const spheres = {
     return CLOUD._setupRequest('GET', '/Spheres/{id}/guests', { background : background });
   },
 
-  getToons: function (background = true) {
-    return CLOUD._setupRequest('GET', '/Spheres/{id}/Toons', { background : background });
-  },
 
   getPresentPeople: function (ignoreDeviceId, background = true) {
     return CLOUD._setupRequest('GET', '/Spheres/{id}/presentPeople', {

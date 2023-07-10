@@ -417,17 +417,4 @@ interface SceneData {
 }
 
 
-interface ToonData {
-  id:                      string,
-  toonAgreementId:         string,
-  toonAddress:             string,
-  cloudId:                 string,
-  schedule:                string,
-  updatedScheduleTime:     number,
-  enabled:                 boolean,
-  cloudChangedProgram:     string,
-  cloudChangedProgramTime: number,
-  updatedAt:               number,
-}
-
 type PICTURE_SOURCE = "STOCK" | "CUSTOM";

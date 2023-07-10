@@ -16,7 +16,6 @@ import { FirmwareSyncerNext } from "./syncers/FirmwareSyncerNext";
 import { BootloaderSyncerNext } from "./syncers/BootloaderSyncerNext";
 import { KeySyncerNext } from "./syncers/KeySyncerNext";
 import { UserSyncerNext } from "./syncers/UserSyncerNext";
-import { ToonSyncerNext } from "./syncers/ToonSyncerNext";
 import { SphereTransferNext } from "./transferrers/SphereTransferNext";
 import { Get } from "../../../util/GetUtil";
 import { FingerprintSyncerNext } from "./syncers/FingerprintSyncerNext";
@@ -254,13 +253,6 @@ export const SyncNext = {
         SyncNext.mergeSphereReply(cloudSphereId, reply, moduleReply)
       }
 
-      if (sphereCloudResponse.toons) {
-        let moduleReply = {};
-        for (let toonId in sphereCloudResponse.toons) {
-          new ToonSyncerNext({ cloudId: toonId, ...sphereSyncBase }).process(sphereCloudResponse.toons[toonId].data, moduleReply)
-        }
-        SyncNext.mergeSphereReply(cloudSphereId, reply, moduleReply)
-      }
       // if (sphereCloudResponse.trackingNumbers) {
       //   let moduleReply = {};
       //   SyncNext.mergeSphereReply(cloudSphereId, reply, moduleReply)
@@ -319,9 +311,6 @@ export const SyncNext = {
       }
       if (scopeMap.sphereUsers) {
         result[sphere_cloudId].users = SphereUserSyncerNext.prepare(sphere);
-      }
-      if (scopeMap.toons) {
-        result[sphere_cloudId].toons = ToonSyncerNext.prepare(sphere);
       }
       if (scopeMap.fingerprints) {
         result[sphere_cloudId].fingerprints = FingerprintSyncerNext.prepare(sphere);

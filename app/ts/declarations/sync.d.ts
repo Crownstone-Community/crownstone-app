@@ -11,7 +11,6 @@ type SyncCategory = 'bootloaders'     |
                     'sphereUsers'     |
                     'stones'          |
                     'trackingNumbers' |
-                    'toons'           |
                     'user'
 
 type DataCategory = SyncCategory | 'abilities' | 'properties' | 'behaviours' | 'users'
@@ -30,7 +29,6 @@ interface SyncIgnoreMap {
   sphereUsers:     boolean,
   stones:          boolean,
   trackingNumbers: boolean,
-  toons:           boolean,
   user:            boolean,
 }
 
@@ -49,7 +47,6 @@ interface SyncScopeMap {
   sphereUsers?:     boolean,
   stones?:          boolean,
   trackingNumbers?: boolean,
-  toons?:           boolean,
   user?:            boolean,
 }
 
@@ -92,9 +89,6 @@ interface SyncRequestSphereData {
     trackingNumbers?: {
       [trackingNumberId: string]: RequestItemCoreType
     }
-    toons?: {
-      [toonId: string]: RequestItemCoreType
-    },
     users?: {
       [userId: string] : RequestItemCoreType
     }
@@ -213,11 +207,6 @@ interface SyncRequestResponse_Sphere {
       data: SyncResponseItemCore<cloud_SphereTrackingNumber>
     }
   }
-  toons?:  {
-    [toonId: string] : {
-      data: SyncResponseItemCore<cloud_Toon>
-    }
-  },
   users?: {
     [userId: string]: {
       data: SyncResponseCustomItemCore<cloud_UserData>
