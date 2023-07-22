@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Platform, ScrollView, Text, TouchableHighlight, View} from "react-native";
-import { background, colors, screenWidth, styles, tabBarHeight, viewPaddingTop } from "../styles";
+import {Platform, ScrollView} from "react-native";
+import { viewPaddingTop } from "../styles";
 
 
 

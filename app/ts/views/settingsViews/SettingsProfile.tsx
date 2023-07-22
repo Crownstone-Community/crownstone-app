@@ -117,7 +117,7 @@ export class SettingsProfile extends LiveComponent<any, any> {
       }
     });
     items.push({
-      label: lang("Last_Name"), 
+      label: lang("Last_Name"),
       type: 'textEdit',
       value: this.state.lastName,
       testID:'lastName',
@@ -158,7 +158,7 @@ export class SettingsProfile extends LiveComponent<any, any> {
           <View style={{flexDirection:'row', padding:6, paddingRight:15, paddingLeft: 15, paddingBottom:12}}>
             <TouchableHighlight
               testID={"DataManagement"}
-              onPress={() => { Linking.openURL(`https://next.crownstone.rocks/user-data`).catch(err => {})}}
+              onPress={() => { Linking.openURL(`https://next.ownstone.org/user-data`).catch(err => {})}}
             >
               <Text style={{fontSize:12, color:colors.blue3.hex}}>{ lang("DELETE_USER") }</Text>
             </TouchableHighlight>

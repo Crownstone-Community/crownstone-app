@@ -6,7 +6,6 @@ import messageReducer from './messages'
 import scenesReducer from './scenes'
 import hubReducer from './hub'
 import sortedListsReducer from './sortedLists'
-import thirdPartyReducer from './thirdParty'
 import { update, getTime, refreshDefaults, idReducerGenerator } from "./reducerUtil";
 import sphereKeyReducer from "./sphereKeys";
 
@@ -184,7 +183,6 @@ let combinedSphereReducer = combineReducers({
   features:    featureReducer,
   messages:    messageReducer,
   state:       sphereStateReducer,
-  thirdParty:  thirdPartyReducer,
   sortedLists: sortedListsReducer,
   keys:        sphereKeyReducer,
 });

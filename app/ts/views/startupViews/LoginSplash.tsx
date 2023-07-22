@@ -14,7 +14,7 @@ import {
 } from "react-native";
 
 import {Background, BackgroundCustomTopBar} from './../components/Background'
-import { background, colors, deviceModel, screenWidth, styles, tabBarMargin } from "./../styles";
+import { background, colors, deviceModel, screenWidth, styles } from "./../styles";
 import loginStyles from './LoginStyles'
 
 import DeviceInfo from 'react-native-device-info';

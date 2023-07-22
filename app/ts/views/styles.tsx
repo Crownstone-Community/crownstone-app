@@ -1,19 +1,21 @@
 import * as React from 'react';
-import {Dimensions, PixelRatio, Platform, StyleSheet, TextStyle} from 'react-native'
+import {Dimensions, PixelRatio, Platform, StatusBar, StyleSheet, TextStyle} from 'react-native'
 import {hex2rgb, hsv2hex, rgb2hex, rgb2hsv} from '../util/ColorConverters'
 import DeviceInfo from 'react-native-device-info';
 import {LOG, LOGi} from "../logging/Log";
 import { Navigation } from "react-native-navigation";
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 export const deviceModel    = DeviceInfo.getModel();
 export const deviceId       = DeviceInfo.getDeviceId();
 export let isModernIosModel = deviceModel.indexOf('iPhone X') !== -1 || deviceModel.indexOf('iPhone 1') !== -1;
 
-export let topBarMargin    = 0
-export let tabBarMargin    = isModernIosModel ? 34 : 0 ; // Status bar in iOS is 20 high
-export let tabBarHeight    = isModernIosModel ? 49 + 34: 49;
-export let statusBarHeight = Platform.OS === 'android' ? 24  :  (isModernIosModel ? 44 : 20); // Status bar in iOS is 20 high
-export let topBarHeight    = Platform.OS === 'android' ? 54  :  (isModernIosModel ? 44 : 44) + statusBarHeight; // Status bar in iOS is 20 high
+export let tabBarMargin    = isModernIosModel ? 34 : 0 ;    // overridden in setInsets
+export let tabBarHeight    = isModernIosModel ? 49 + 34: 49; //overridden in setInsets
+export let statusBarHeight = Platform.OS === 'android' ? 24  : (
+    getStatusBarHeight() || StatusBar.currentHeight || (isModernIosModel ? 44 : 20))
+; // Status bar in iOS is 20 high
+export let topBarHeight    = Platform.OS === 'android' ? 54  : 44 + statusBarHeight; // Status bar in iOS is 20 high
 
 export let screenWidth  = Dimensions.get('window').width;
 export let screenHeight = Dimensions.get('window').height; // initial guess
@@ -30,16 +32,14 @@ export let viewPaddingTop = Platform.OS === 'android' ? topBarHeight : topBarHei
  */
 export function setInsets(insets: {bottom: number, left:number,right:number, top:number}) {
   if (Platform.OS === 'ios') {
-    topBarMargin    = 0;
     tabBarMargin    = insets.bottom;
     tabBarHeight    = insets.bottom > 0 ? 49 + 34: 49; // use the insets to determine if we are on an iPhone X or above
     statusBarHeight = (insets.top > 0 ? insets.top : 20); // Status bar in iOS is 20 high
+
     topBarHeight    = 44 + statusBarHeight; // Status bar in iOS is 20 high
-
     availableScreenHeight = screenHeight - topBarHeight - tabBarHeight;
-    availableModalHeight  = screenHeight - topBarHeight;
 
-    console.log("SET INSETS", insets, topBarHeight, tabBarHeight, availableScreenHeight, availableModalHeight);
+    availableModalHeight  = screenHeight - topBarHeight;
   }
 }
 
@@ -421,7 +421,7 @@ export const deviceStyles = StyleSheet.create({
     color: textColor.hex,
     fontSize: 25,
     fontWeight:'bold',
-    textAlign:'center', 
+    textAlign:'center',
   },
   subHeader: {
     paddingTop:10,

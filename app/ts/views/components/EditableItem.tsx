@@ -25,7 +25,6 @@ import { SliderBar }         from './editComponents/SliderBar'
 import { OptionalSwitchBar } from './editComponents/OptionalSwitchBar'
 import { SwitchBar }         from './editComponents/SwitchBar'
 import { TextEditBar }       from './editComponents/TextEditBar'
-import { TimePicker }        from './editComponents/TimePicker'
 import { TextBlob }          from "./editComponents/TextBlob";
 import { CollapsableBar }    from "./editComponents/Collapsable";
 import { ButtonGetValue }    from "./editComponents/ButtonGetValue";
@@ -161,8 +160,8 @@ export class EditableItem extends Component<any, any> {
         return <TextEditBar barHeight={NORMAL_ROW_SIZE} {...this.props} />;
       case 'textBlob':
         return <TextBlob barHeight={NORMAL_ROW_SIZE} {...this.props} />;
-      case 'timePicker':
-        return <TimePicker barHeight={NORMAL_ROW_SIZE} {...this.props} />;
+      // case 'timePicker':
+      //   return <TimePicker barHeight={NORMAL_ROW_SIZE} {...this.props} />;
       default:
         return (
           <View>

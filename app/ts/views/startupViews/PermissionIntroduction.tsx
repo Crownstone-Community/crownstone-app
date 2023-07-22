@@ -13,7 +13,6 @@ import {
   screenHeight,
   statusBarHeight,
   styles,
-  tabBarMargin
 } from "../styles";
 import { core } from "../../Core";
 import { AnimatedBackground } from "../components/animated/AnimatedBackground";

@@ -5,8 +5,8 @@
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc",
-    "react": "react-native start --reset-cache",
-    "react-lite": "react-native start --reset-cache --max-workers 2",
+    "react": "export NODE_OPTIONS=--openssl-legacy-provider; react-native start --reset-cache",
+    "react-lite": "export NODE_OPTIONS=--openssl-legacy-provider; react-native start --reset-cache --max-workers 2",
     "test": "jest",
     "ios": "react-native run-ios",
     "iosUiTests": "npx wdio ./tests_ui/testConfigs/iosSimulator.conf.js",
@@ -52,6 +52,7 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-splash-screen": "^3.3.0",
     "react-native-sse": "^1.1.0",
+    "react-native-status-bar-height": "^2.6.0",
     "react-native-svg": "^12.3.0",
     "react-native-uncontrolled-date-picker-ios": "^1.0.0",
     "react-native-vector-icons": "^9.1.0",

@@ -8,16 +8,13 @@ import {ListEditableItems} from '../components/ListEditableItems'
 import { background, colors, screenWidth, styles, tabBarHeight, viewPaddingTop } from "../styles";
 
 import {core} from "../../Core";
-import {TopBarUtil} from "../../util/TopBarUtil";
 import {NavigationUtil} from "../../util/navigation/NavigationUtil";
 import {AppUtil} from "../../util/AppUtil";
 import {LOGe} from "../../logging/Log";
 import {getDevAppItems} from "./dev/SettingsDeveloper";
 import {Icon} from "../components/Icon";
-import {SettingsNavbarBackground} from "../components/SettingsBackground";
 import { DataUtil } from "../../util/DataUtil";
 import { SettingsScrollView } from "../components/SettingsScrollView";
-import { EditDone, EditIcon } from "../components/EditIcon";
 import { TopBarBlur } from "../components/NavBarBlur";
 import { BackgroundCustomTopBarNavbar } from "../components/Background";
 

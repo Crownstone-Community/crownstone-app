@@ -110,7 +110,7 @@ export class SphereOverviewContent extends LiveComponent<any, any> {
         change.changeSpheres                 ||
         change.changeLocations
       ) {
-        console.log("Redraw triggered from Sphere Overview by:", Object.keys(change))
+        // console.log("Redraw triggered from Sphere Overview by:", Object.keys(change))
         this.forceUpdate();
       }
     });

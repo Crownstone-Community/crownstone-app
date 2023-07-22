@@ -9,16 +9,10 @@ import {
   Animated, BackHandler, Keyboard,
   KeyboardAvoidingView,
   Platform,
-  View
 } from "react-native";
 
 import {
-  styles,
   screenHeight,
-  tabBarHeight,
-  colors,
-  screenWidth,
-  updateScreenHeight, availableScreenHeight, availableModalHeight
 } from "../styles";
 import { core } from "../../Core";
 
